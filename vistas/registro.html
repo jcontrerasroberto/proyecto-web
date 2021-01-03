@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml-transitional.dtd">
+<html xmlns="http://www.w3,org/1999/xhtml" xml:lang="es" lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+  <title>.:Registro nuevo ingreso:.</title>
+</head>
+
+<body>
+  <div class="container-fluid titular">
+    <h1>REGISTRO DE DATOS GENERALES</h1>
+    <h3>Alumnos de Nuevo Ingreso</h3>
+    <h3>(Agosto 2020)</h3>
+  </div>
+  <div class="container formulario">
+    <form onsubmit="alert('Datos almacenados correctamente')" class="formulario-entradas">
+
+      <div class="row d-flex justify-content-center text-center">
+        <div class="col-sm-12 col-md-4 seccion">
+          <fieldset>
+            <legend>Identidad</legend>
+            <div class="form-group">
+              <label for="boleta">Número de boleta</label>
+              <input type="text" name="boleta" id="boleta" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" name="nombre" id="nombre" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="apellidop">Apellido paterno</label>
+              <input type="text" name="apellidop" id="apellidop" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="apellidom">Apellido materno</label>
+              <input type="text" name="apellidom" id="apellidom" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="daten">Fecha de nacimiento</label>
+              <input type="date" name="daten" id="daten" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="sexo"> Sexo </label>
+              <br>
+              <div class="form-check-inline">
+                <input class="form-check-input" type="radio" name="sexo" id="femenino" value="femenino" checked>
+                <label class="form-check-label" for="femenino">
+                  Femenino
+                </label>
+              </div>
+              <div class="form-check-inline">
+                <input class="form-check-input" type="radio" name="sexo" id="masculino" value="masculino">
+                <label class="form-check-label" for="masculino">
+                  Masculino
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="curp">CURP</label>
+              <input type="text" name="curp" id="curp" class="form-control" />
+            </div>
+          </fieldset>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <fieldset>
+            <legend>Contacto</legend>
+            <div class="form-group">
+              <label for="calle">Calle y n&uacute;mero </label>
+              <input type="text" name="calle" id="calle" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="colonia">Colonia </label>
+              <input type="text" name="colonia" id="colonia" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="codpostal">C&oacute;digo postal</label>
+              <input type="number" min="0" name="codpostal" id="codpostal" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="tel">T&eacute;lefono o celular</label>
+              <input type="text" name="tel" id="tel" pattern="[0-9]{10}" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="correo">Correo electr&oacute;nico</label>
+              <input type="email" name="correo" placeholder="usuario@servidor.com" id="correo" class="form-control" />
+            </div>
+          </fieldset>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <fieldset>
+            <legend>Procedencia</legend>
+            <div class="form-group">
+              <label for="escuela"> Escuela de procedencia </label>
+              <select name="escuela" class="form-control">
+                <option value="null">Selecciona uno...</option>
+                <option value="CECyT 1">CECyT 1 "Gonzalo V&aacute;zquez Vela" </option>
+                <option value="CECyT 2">CECyT 2 "Miguel Bernard Perales" </option>
+                <option value="CECyT 3">CECyT 3 "Estanislao Ramirez Ru&iacute;z" </option>
+                <option value="CECyT 4">CECyT 4 "L&aacute;zaro C&aacute;rdenas" </option>
+                <option value="CECyT 5">CECyT 5 "Benito Ju&aacute;rez Garc&iacute;a" </option>
+                <option value="CECyT 6">CECyT 6 "Miguel Oth&oacute;n de Mendizabal" </option>
+                <option value="CECyT 7">CECyT 7 "Cuauht&eacute;moc" </option>
+                <option value="CECyT 8">CECyT 8 "Narciso Bassols Garc&iacute;a" </option>
+                <option value="CECyT 9">CECyT 9 "Juan de Dios B&aacute;tiz Paredes" </option>
+                <option value="CECyT 10">CECyT 10 "Carlos Vallejo M&aacute;rquez" </option>
+                <option value="CECyT 11">CECyT 11 "Wilfrido Massieu" </option>
+                <option value="CECyT 12">CECyT 12 "Jos&eacute; María Morelos" </option>
+                <option value="CECyT 13">CECyT 13 "Ricardo Flores Mag&oacute;n" </option>
+                <option value="CECyT 14">CECyT 14 "Luis Enrique Erro Soler" </option>
+                <option value="CECyT 15">CECyT 15 "Diódoro Ant&uacute;nez Echagaray" </option>
+                <option value="CECyT 16">CECyT 16 "Unidad Hidalgo" </option>
+                <option value="CECyT 17">CECyT 17 "Unidad Guanajuato" </option>
+                <option value="CET 1">CET 1 "Walter Cross Buchanan" </option>
+                <option value="otro">OTRO</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="entidad"> Entidad federativa de procedencia </label>
+              <select name="entidad" class="form-control">
+                <option value="null">Selecciona uno...</option>
+                <option value="Aguascalientes">Aguascalientes</option>
+                <option value="Baja California">Baja California</option>
+                <option value="Baja California Sur">Baja California Sur</option>
+                <option value="Campeche">Campeche</option>
+                <option value="Chiapas">Chiapas</option>
+                <option value="Chihuahua">Chihuahua</option>
+                <option value="CDMX">Ciudad de M&eacute;xico</option>
+                <option value="Coahuila">Coahuila</option>
+                <option value="Colima">Colima</option>
+                <option value="Durango">Durango</option>
+                <option value="Estado de M&eacute;xico">Estado de M&eacute;xico</option>
+                <option value="Guanajuato">Guanajuato</option>
+                <option value="Guerrero">Guerrero</option>
+                <option value="Hidalgo">Hidalgo</option>
+                <option value="Jalisco">Jalisco</option>
+                <option value="Michoacan">Michoac&aacute;n</option>
+                <option value="Morelos">Morelos</option>
+                <option value="Nayarit">Nayarit</option>
+                <option value="Nuevo Leon">Nuevo Le&oacute;n</option>
+                <option value="Oaxaca">Oaxaca</option>
+                <option value="Puebla">Puebla</option>
+                <option value="Queretaro">Quer&eacute;taro</option>
+                <option value="Quintana Roo">Quintana Roo</option>
+                <option value="San Luis Potos&iacute;">San Luis Potosí</option>
+                <option value="Sinaloa">Sinaloa</option>
+                <option value="Sonora">Sonora</option>
+                <option value="Tabasco">Tabasco</option>
+                <option value="Tamaulipas">Tamaulipas</option>
+                <option value="Tlaxcala">Tlaxcala</option>
+                <option value="Veracruz">Veracruz</option>
+                <option value="Yucatan">Yucat&aacute;n</option>
+                <option value="Zacatecas">Zacatecas</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="nombreE">Nombre de la escuela </label>
+              <input type="text" name="nombreE" id="nombreE" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="promedio">Promedio </label>
+              <input type="number" step="0.01" min="0" max="10" name="promedio" id="promedio" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="escom">ESCOM fue tu </label>
+              <select name="escom" class="form-control">
+                <option value="null">Selecciona uno...</option>
+                <option value="primera"> 1ra opci&oacute;n</option>
+                <option value="segunda"> 2da opci&oacute;n</option>
+                <option value="tercera"> 3ra opci&oacute;n</option>
+                <option value="cuarta"> 4ta opci&oacute;n </option>
+              </select>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+
+      <div class="botones row d-flex justify-content-center text-center">
+        <input type="submit" value="Enviar datos" class="btn btn-primary">
+        <input type="reset" value="Limpiar Formulario" class="btn btn-warning">
+      </div>
+    </form>
+  </div>
+
+</body>
+
+</html>
