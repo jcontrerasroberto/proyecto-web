@@ -9,8 +9,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
     crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/styles.css">
-  <title>.:Registro nuevo ingreso:.</title>
+  <title>Registro nuevo ingreso</title>
 </head>
 
 <body>
@@ -20,33 +21,59 @@
     <h3>(Agosto 2020)</h3>
   </div>
   <div class="container formulario">
-    <form onsubmit="alert('Datos almacenados correctamente')" class="formulario-entradas">
+    <form onsubmit="alert('Datos almacenados correctamente')" class="formulario-entradas" id="form">
 
       <div class="row d-flex justify-content-center text-center">
         <div class="col-sm-12 col-md-4 seccion">
           <fieldset>
             <legend>Identidad</legend>
-            <div class="form-group">
+            
+            <div class="form-group" id="group-boleta">
               <label for="boleta">Número de boleta</label>
-              <input type="text" name="boleta" id="boleta" class="form-control" />
+              <div class="form-group-input">
+                <input type="text" name="boleta" id="boleta" class="form-control" required/>
+                <i class="fas fa-times  form-valid-edo"></i>
+              </div>
+              <p class="form-input-err">Debes ingresar 10 d&iacute;gitos o PE/PM seguido de 8 d&iacute;gitos.</p>
             </div>
-            <div class="form-group">
+            
+            <div class="form-group" id="group-nombre">
               <label for="nombre">Nombre</label>
-              <input type="text" name="nombre" id="nombre" class="form-control" />
+              <div class="form-group-input">
+                <input type="text" name="nombre" id="nombre" class="form-control" required/>
+                <i class="fas fa-times  form-valid-edo"></i>
+              </div>
+              <p class="form-input-err">Solo puedes ingresar letras y espacios.</p>
             </div>
-            <div class="form-group">
+
+            <div class="form-group" id="group-apellidop">
               <label for="apellidop">Apellido paterno</label>
-              <input type="text" name="apellidop" id="apellidop" class="form-control" />
+              <div class="form-group-input">
+                <input type="text" name="apellidop" id="apellidop" class="form-control" />
+                <i class="fas fa-times  form-valid-edo"></i>
+              </div>
+              <p class="form-input-err">Solo puedes ingresar letras y espacios.</p>
             </div>
-            <div class="form-group">
+
+            <div class="form-group" id="group-apellidom">
               <label for="apellidom">Apellido materno</label>
-              <input type="text" name="apellidom" id="apellidom" class="form-control" />
+              <div class="form-group-input">
+                <input type="text" name="apellidom" id="apellidom" class="form-control" />
+                <i class="fas fa-times  form-valid-edo"></i>
+              </div>
+              <p class="form-input-err">Solo puedes ingresar letras y espacios.</p>
             </div>
-            <div class="form-group">
+
+            <div class="form-group" id="group-daten">
               <label for="daten">Fecha de nacimiento</label>
-              <input type="date" name="daten" id="daten" class="form-control" />
+              <div class="form-group-input">
+                <input type="date" name="daten" id="daten" class="form-control" />
+                <i class="fas fa-times  form-valid-edo"></i>
+              </div>
+              <p class="form-input-err">Selecciona una fecha.</p>
             </div>
-            <div class="form-group">
+
+            <div class="form-group" id="group-sexo">
               <label for="sexo"> Sexo </label>
               <br>
               <div class="form-check-inline">
@@ -62,43 +89,75 @@
                 </label>
               </div>
             </div>
-            <div class="form-group">
+
+            <div class="form-group" id="group-curp">
               <label for="curp">CURP</label>
-              <input type="text" name="curp" id="curp" class="form-control" />
+              <div class="form-group-input">
+                <input type="text" name="curp" id="curp" class="form-control" />
+                <i class="fas fa-times  form-valid-edo"></i>
+              </div>
+              <p class="form-input-err">Formato inv&aacute;lido. Recuerda ingresarlo en may&uacute;sculas.</p>
             </div>
           </fieldset>
         </div>
         <div class="col-sm-12 col-md-4">
           <fieldset>
             <legend>Contacto</legend>
-            <div class="form-group">
+            
+            <div class="form-group" id="group-calle">
               <label for="calle">Calle y n&uacute;mero </label>
-              <input type="text" name="calle" id="calle" class="form-control" />
+              <div class="form-group-input">
+                <input type="text" name="calle" id="calle" class="form-control" />
+                <i class="fas fa-times  form-valid-edo"></i>
+              </div>
+              <p class="form-input-err">Llena este campo.</p>
             </div>
-            <div class="form-group">
+            
+            <div class="form-group" id="group-colonia">
               <label for="colonia">Colonia </label>
-              <input type="text" name="colonia" id="colonia" class="form-control" />
+              <div class="form-group-input">
+                <input type="text" name="colonia" id="colonia" class="form-control" />
+                <i class="fas fa-times  form-valid-edo"></i>
+              </div>
+              <p class="form-input-err">Llena este campo.</p>
             </div>
-            <div class="form-group">
+            
+            <div class="form-group" id="group-codpostal">
               <label for="codpostal">C&oacute;digo postal</label>
-              <input type="number" min="0" name="codpostal" id="codpostal" class="form-control" />
+              <div class="form-group-input">
+                <input type="number" min="0" name="codpostal" id="codpostal" class="form-control" />
+                <i class="fas fa-times  form-valid-edo"></i>
+              </div>
+              <p class="form-input-err">Debes ingresar 5 d&iacute;gitos.</p>
             </div>
-            <div class="form-group">
-              <label for="tel">T&eacute;lefono o celular</label>
-              <input type="text" name="tel" id="tel" pattern="[0-9]{10}" class="form-control" />
+            
+            <div class="form-group" id="group-tel">
+              <label for="tel">Tel&eacute;fono o celular</label>
+              <div class="form-group-input">
+                <input type="text" name="tel" id="tel" pattern="[0-9]{10}" class="form-control" />
+                <i class="fas fa-times  form-valid-edo"></i>
+              </div>
+              <p class="form-input-err">Debes ingresar m&aacute;ximo 10 d&iacute;gitos.</p>
             </div>
-            <div class="form-group">
+            
+            <div class="form-group" id="group-correo">
               <label for="correo">Correo electr&oacute;nico</label>
-              <input type="email" name="correo" placeholder="usuario@servidor.com" id="correo" class="form-control" />
+              <div class="form-group-input">
+                <input type="email" name="correo" placeholder="usuario@servidor.com" id="correo" class="form-control" />
+                <i class="fas fa-times  form-valid-edo"></i>
+              </div>
+              <p class="form-input-err">Correo inv&aacute;lido.</p>
             </div>
+
           </fieldset>
         </div>
         <div class="col-sm-12 col-md-4">
           <fieldset>
             <legend>Procedencia</legend>
+            
             <div class="form-group">
               <label for="escuela"> Escuela de procedencia </label>
-              <select name="escuela" class="form-control">
+              <select name="escuela" class="form-control" id="selEscuela">
                 <option value="null">Selecciona uno...</option>
                 <option value="CECyT 1">CECyT 1 "Gonzalo V&aacute;zquez Vela" </option>
                 <option value="CECyT 2">CECyT 2 "Miguel Bernard Perales" </option>
@@ -121,6 +180,8 @@
                 <option value="otro">OTRO</option>
               </select>
             </div>
+            
+            
             <div class="form-group">
               <label for="entidad"> Entidad federativa de procedencia </label>
               <select name="entidad" class="form-control">
@@ -159,14 +220,25 @@
                 <option value="Zacatecas">Zacatecas</option>
               </select>
             </div>
-            <div class="form-group">
+            
+            <div class="form-group nombreE" id="group-nombreE">
               <label for="nombreE">Nombre de la escuela </label>
-              <input type="text" name="nombreE" id="nombreE" class="form-control" />
+              <div class="form-group-input">
+                <input type="text" name="nombreE" id="nombreE" class="form-control" />
+                <i class="fas fa-times  form-valid-edo"></i>
+              </div>
+              <p class="form-input-err">Llena este campo.</p>
             </div>
-            <div class="form-group">
-              <label for="promedio">Promedio </label>
-              <input type="number" step="0.01" min="0" max="10" name="promedio" id="promedio" class="form-control" />
+            
+            <div class="form-group" id="group-promedio">
+            <label for="promedio">Promedio </label>
+              <div class="form-group-input">
+                <input type="number" step="0.01" min="0" max="10" name="promedio" id="promedio" class="form-control" required/>
+                <i class="fas fa-times  form-valid-edo"></i>
+              </div>
+              <p class="form-input-err">Ingresa un n&uacute;mero entre 0 y 10.</p>
             </div>
+
             <div class="form-group">
               <label for="escom">ESCOM fue tu </label>
               <select name="escom" class="form-control">
@@ -182,12 +254,15 @@
       </div>
 
       <div class="botones row d-flex justify-content-center text-center">
+        <p class="form-mens" id="form-mens"><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena todos los campos del formulario correctamente.</p>
         <input type="submit" value="Enviar datos" class="btn btn-primary">
         <input type="reset" value="Limpiar Formulario" class="btn btn-warning">
+        <p class="form-message-success" id="form-message-success">Chido</p>
       </div>
     </form>
   </div>
 
+  <script src="../scripts/script.js"></script>
 </body>
 
 </html>
