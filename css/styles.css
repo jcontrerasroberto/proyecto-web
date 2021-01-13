@@ -31,8 +31,9 @@ legend{
 }
 
 .botones{
-    width: 70%;
+    width: 80%;
     margin: auto;
+    display: flex;
     margin-top: 30px;
     margin-bottom: 50px;
 }
@@ -76,6 +77,7 @@ legend{
 #group-daten .form-valid-edo{
     right: 40px;
 }
+
 #group-promedio .form-valid-edo{
     right: 30px;
 }

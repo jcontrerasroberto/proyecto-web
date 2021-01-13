@@ -3,6 +3,7 @@ const form = document.getElementById('form');
 const inputs = document.querySelectorAll('#form input');
 const selEscuela = document.querySelector('#selEscuela');
 const selectors = document.querySelectorAll('#form select');
+const count_error = 0;
 
 const expressions = {
     nombre: /^[a-zA-ZÀ-ÿ\s]+$/,
@@ -141,6 +142,9 @@ form.addEventListener('submit', (e) => {
     if(campos.boleta && campos.nombre && campos.apellidop && campos.apellidom && campos.daten && campos.curp && campos.calle && campos.colonia && campos.codpostal && campos.correo && campos.nombreE && campos.promedio && campos.escom && campos.entidad && campos.escom){
         console.log('Formulario llenado correctamente');
         document.querySelector('#form-mens').classList.remove('form-mens-active');
+        llenarInfo();
+        $("#myModal").modal();
+
     }else{
         console.log('nelPastel');
         document.querySelector('#form-mens').classList.add('form-mens-active');
