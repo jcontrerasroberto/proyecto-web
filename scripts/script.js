@@ -139,7 +139,7 @@ selEscuela.addEventListener('change', (e) => {  //para mostrar el campo nombreE 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    if(campos.boleta && campos.nombre && campos.apellidop && campos.apellidom && campos.daten && campos.curp && campos.calle && campos.colonia && campos.codpostal && campos.correo && campos.nombreE && campos.promedio && campos.escom && campos.entidad && campos.escom){
+    if(campos.boleta && campos.nombre && campos.apellidop && campos.apellidom && campos.daten && campos.curp && campos.calle && campos.colonia && campos.codpostal && campos.correo && campos.nombreE && campos.promedio && campos.escuela && campos.entidad && campos.escom){
         console.log('Formulario llenado correctamente');
         document.querySelector('#form-mens').classList.remove('form-mens-active');
         llenarInfo();
