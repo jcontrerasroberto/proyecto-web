@@ -23,7 +23,6 @@ function llenarInfo() {
 
     selectores.forEach(
         element => {
-            console.log(element.value);
             pos = document.getElementById("mostrar_" + element.name);
             pos.innerHTML = '';
             if (element.name == "escuela" && element.value == "otro")
@@ -41,7 +40,14 @@ function guardarDatos() {
     entradas.forEach(
         element => {
             if (element.name != "") {
-                alumno[element.name] = element.value;
+                if (element.name == "sexo") {
+                    if (element.checked) {
+                        alumno[element.name] = element.value;
+                    }
+                }else{
+                    alumno[element.name] = element.value;
+                }
+                
             }
 
         }
@@ -51,8 +57,8 @@ function guardarDatos() {
             alumno[element.name] = element.value;
         }
     )
+
     var jsonformat = JSON.stringify(alumno);
-    console.log(jsonformat);
 
     $.ajax({
         url: '../backend/insertar_alumno.php',

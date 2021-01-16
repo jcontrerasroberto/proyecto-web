@@ -33,8 +33,9 @@ create table alumno (
     entidad varchar(19) not null,
     nombreE varchar(50),
     promedio double(4,2) not null,
-    escom int(1) not null
-    foreing key (horario_id) REFERENCES horarios(horario_id)
+    escom int(1) not null, 
+    horario_id int not null,
+    foreign key (horario_id) REFERENCES horarios(horario_id)
 );
 
 
