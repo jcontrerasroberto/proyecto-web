@@ -34,6 +34,7 @@ create table alumno (
     nombreE varchar(50),
     promedio double(4,2) not null,
     escom int(1) not null
+    foreing key (horario_id) REFERENCES horarios(horario_id)
 );
 
 
