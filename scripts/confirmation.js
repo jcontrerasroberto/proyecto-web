@@ -52,9 +52,10 @@ function guardarDatos() {
         }
     )
     var jsonformat = JSON.stringify(alumno);
+    console.log(jsonformat);
 
     $.ajax({
-        url: '../backend/conexionbd.php',
+        url: '../backend/insertar_alumno.php',
         type: 'post',
         dataType: 'json',
         contentType: 'application/json',
