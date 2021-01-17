@@ -103,3 +103,7 @@ legend{
 .nombreE-active{
     display: block;
 }
+
+.error-bd{
+    display: none;
+}

@@ -69,7 +69,7 @@
         }
     }
 
-    $return_arr[] = array("success" => $resultados_update);
+    $return_arr[] = array("success" => $resultados_update , "id" => $data['boleta']);
 
     mysqli_stmt_close($accion);
 

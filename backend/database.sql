@@ -23,7 +23,7 @@ create table alumno (
     apellidom varchar(50) not null,
     daten date not null,
     sexo bool not null,
-    curp char(18) not null,
+    curp char(18) not null unique,
     calle varchar(50) not null,
     colonia varchar(50) not null,
     codpostal int(5) not null,

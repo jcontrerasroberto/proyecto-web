@@ -66,7 +66,11 @@ function guardarDatos() {
         dataType: 'json',
         contentType: 'application/json',
         success: function (data) {
-            console.log(data);
+            if(data[0].success){
+                window.location.href="registro_exitoso.html?id="+data[0].id;
+            }else{
+                document.getElementById("errorbd").style.display="block";
+            }
         },
         data: jsonformat
     });

@@ -1,6 +1,6 @@
 <?php
 
-    $sql = "SELECT * FROM horarios WHERE disponible=1 LIMIT 1";
+    $sql = "SELECT * FROM horarios WHERE disponible=1 and lugares_ocupados<25 LIMIT 1";
     $resultados_horarios = $enlace->query($sql);
 
     if (!($resultados_horarios)){
