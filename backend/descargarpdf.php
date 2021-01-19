@@ -1,5 +1,5 @@
 <?php
-    //require_once("openconnection.php");
+    require_once("openconnectiondb.php");
     include("./fpdf182/fpdf.php");
 
     class PDF extends FPDF
@@ -19,5 +19,5 @@
     $pdf->SetFont('Helvetica','',12);
     $pdf->Output();
 
-    //require_once("closeconnection.php");
+    require_once("closeconnectiondb.php");
 ?>
