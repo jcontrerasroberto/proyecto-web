@@ -1,6 +1,7 @@
 function llenarInfo() {
     const entradas = document.querySelectorAll('#form input');
     const selectores = document.querySelectorAll('#form select');
+    console.log(entradas);
     entradas.forEach(
         element => {
             if (element.name != "") {
@@ -8,7 +9,7 @@ function llenarInfo() {
                 pos.innerHTML = '';
                 if (element.name == "sexo") {
                     if (element.checked) {
-                        var node = document.createTextNode((element.value).toUpperCase());
+                        var node = document.createTextNode((element.id).toUpperCase());
                         pos.appendChild(node);
                     }
                 } else {
