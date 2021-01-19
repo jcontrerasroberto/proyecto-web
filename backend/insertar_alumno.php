@@ -11,11 +11,16 @@
     $sexo = 0;
     $n_opcion = 0;
     
+    
     $data['sexo']=="masculino" ? $sexo=0 : $sexo=1;
+    
+    
     if ($data["escom"]=="primera") $n_opcion = 1;
     if ($data["escom"]=="segunda") $n_opcion = 2;
     if ($data["escom"]=="tercera") $n_opcion = 3;
     if ($data["escom"]=="cuarta") $n_opcion = 4;
+    
+    
 
     $accion = mysqli_prepare($enlace, "INSERT INTO alumno VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     mysqli_stmt_bind_param($accion, 'sssssisssisssssdii', 
