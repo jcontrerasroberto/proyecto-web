@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
-
-.navbar{
+.navbar {
     padding: 0px 50px;
     width: 100%;
     display: flex;
@@ -10,7 +9,7 @@
     margin-bottom: 30px;
 }
 
-.nav-item{
+.nav-item {
     font-size: 25px;
     font-family: 'Fjalla One', sans-serif;
     color: #D61E7A;
@@ -18,11 +17,9 @@
 
 @media (max-width: 520px) {
     .logo-ipn {
-      display: none;
+        display: none;
     }
-
-    .logo-escom{
+    .logo-escom {
         width: 70px;
     }
-  }
-
+}

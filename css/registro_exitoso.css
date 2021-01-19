@@ -5,3 +5,9 @@
     text-align: center;
     width: 50%;
 }
+
+@media (max-width: 520px) {
+    .success{
+        width:80%;
+    }
+}

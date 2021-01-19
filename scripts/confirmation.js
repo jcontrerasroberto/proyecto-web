@@ -68,7 +68,7 @@ function guardarDatos() {
         contentType: 'application/json',
         success: function (data) {
             if(data[0].success){
-                window.location.href="registro_exitoso.html?id="+data[0].id;
+                window.location.href="registro_exitoso.html?id="+data[0].id+"&curp="+data[0].curp;
             }else{
                 document.getElementById("errorbd").style.display="block";
             }

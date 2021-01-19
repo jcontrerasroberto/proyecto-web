@@ -74,7 +74,7 @@
         }
     }
 
-    $return_arr[] = array("success" => $resultados_update , "id" => $data['boleta']);
+    $return_arr[] = array("success" => $resultados_update , "id" => $data['boleta'], "curp" => $data['curp']);
 
     mysqli_stmt_close($accion);
 
