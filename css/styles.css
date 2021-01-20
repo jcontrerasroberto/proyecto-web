@@ -70,13 +70,13 @@ legend{
 .form-valid-edo{
     position: absolute;
     right: 10px;
-    top: 12px;
+    top: 16px;
     z-index: 100;
     opacity: 0;
 }
 
 #group-daten .form-valid-edo{
-    right: 40px;
+    right: 50px;
 }
 
 #group-promedio .form-valid-edo{
