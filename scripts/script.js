@@ -149,4 +149,23 @@ form.addEventListener('submit', (e) => {
         console.log('nelPastel');
         document.querySelector('#form-mens').classList.add('form-mens-active');
     }
+    
+    form.addEventListener('reset', () => {
+        campos.boleta = false;
+        campos.nombre = false;
+        campos.apellidop = false;
+        campos.apellidom = false;
+        campos.daten = false;
+        campos.curp = false;
+        campos.calle = false;
+        campos.colonia = false;
+        campos.codpostal = false;
+        campos.tel = false;
+        campos.correo = false;
+        campos.nombreE = true,
+        campos.promedio = false;
+        campos.escuela = false;
+        campos.entidad = false;
+        campos.escom = false;
+    });
 });
