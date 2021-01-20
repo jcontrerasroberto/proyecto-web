@@ -149,31 +149,33 @@ form.addEventListener('submit', (e) => {
         document.querySelector('#form-mens').classList.add('form-mens-active');
     }
     
-    form.addEventListener('reset', () => {
-        campos.boleta = false;
-        campos.nombre = false;
-        campos.apellidop = false;
-        campos.apellidom = false;
-        campos.daten = false;
-        campos.curp = false;
-        campos.calle = false;
-        campos.colonia = false;
-        campos.codpostal = false;
-        campos.tel = false;
-        campos.correo = false;
-        campos.nombreE = true,
-        campos.promedio = false;
-        campos.escuela = false;
-        campos.entidad = false;
-        campos.escom = false;
-        
-        formGroups.forEach( (formGroup) => {
-            if(formGroup.querySelector('input')){
-                formGroup.classList.remove('form-group-correct');
-                formGroup.classList.add('form-group-notcorrect');
-            }
-            if(formGroup.querySelector('i'))
-                formGroup.querySelector('i').classList.remove('fa-check');
-        });
+});
+
+const formGroups = document.querySelectorAll('div.form-group');
+form.addEventListener('reset', () => {
+    campos.boleta = false;
+    campos.nombre = false;
+    campos.apellidop = false;
+    campos.apellidom = false;
+    campos.daten = false;
+    campos.curp = false;
+    campos.calle = false;
+    campos.colonia = false;
+    campos.codpostal = false;
+    campos.tel = false;
+    campos.correo = false;
+    campos.nombreE = true,
+    campos.promedio = false;
+    campos.escuela = false;
+    campos.entidad = false;
+    campos.escom = false;
+    
+    formGroups.forEach( (formGroup) => {
+        if(formGroup.querySelector('input')){
+            formGroup.classList.remove('form-group-correct');
+            formGroup.classList.add('form-group-notcorrect');
+        }
+        if(formGroup.querySelector('i'))
+            formGroup.querySelector('i').classList.remove('fa-check');
     });
 });
