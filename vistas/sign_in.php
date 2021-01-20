@@ -87,6 +87,7 @@
         </div>
 
     <?php
+        if(!isset($_GET["error"])) exit;
         $error = $_GET["error"];
         if(isset($error) && strcmp($error, "wrongkeys")==0){
             

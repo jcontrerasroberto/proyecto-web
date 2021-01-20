@@ -11,6 +11,9 @@ function llenarInfo() {
                     if (element.checked) {
                         var node = document.createTextNode((element.id).toUpperCase());
                         pos.appendChild(node);
+                    }else{
+                        var node = document.createTextNode("femenino".toUpperCase());
+                        pos.appendChild(node);
                     }
                 } else {
                     var node = document.createTextNode((element.value).toUpperCase());
