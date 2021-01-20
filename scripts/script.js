@@ -167,5 +167,14 @@ form.addEventListener('submit', (e) => {
         campos.escuela = false;
         campos.entidad = false;
         campos.escom = false;
+        
+        formGroups.forEach( (formGroup) => {
+            if(formGroup.querySelector('input')){
+                formGroup.classList.remove('form-group-correct');
+                formGroup.classList.add('form-group-notcorrect');
+            }
+            if(formGroup.querySelector('i'))
+                formGroup.querySelector('i').classList.remove('fa-check');
+        });
     });
 });
