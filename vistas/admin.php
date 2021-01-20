@@ -2,7 +2,7 @@
     session_start();
 
     if (!isset($_SESSION['active']) || !$_SESSION['active']) {
-        header("Location: ../vistas/inicio_sesion.html?error=nosession");
+        header("Location: ../vistas/sign_in.php?error=nosession");
         die();
     }
 

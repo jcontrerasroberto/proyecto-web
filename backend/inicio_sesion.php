@@ -1,6 +1,6 @@
 <?php
-    $user = "admin";
-    $password = "admin";
+    $user = $_POST["user"];
+    $password = $_POST["password"];
 
     if (strcmp($user, "admin")==0 && strcmp($password,"admin")==0){
         session_start();
@@ -9,6 +9,7 @@
         header("Location: ../vistas/admin.php");
         die();
     }else{
-        echo json_encode(array("success"=>0));
+        header("Location: ../vistas/sign_in.php?error=wrongkeys");
+        die();
     }
 ?>

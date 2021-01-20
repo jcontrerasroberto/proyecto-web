@@ -1,3 +1,13 @@
+<?php
+    session_start();
+
+    if (isset($_SESSION['active']) && $_SESSION['active']) {
+        header("Location: ../vistas/admin.php");
+        die();
+    }
+
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml-transitional.dtd">
 <html xmlns="http://www.w3,org/1999/xhtml" xml:lang="es" lang="es">
 
@@ -18,6 +28,7 @@
             integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
             integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+        <link rel="stylesheet" href="../css/bootstrap.min.css" />
         <link rel="stylesheet" href="../css/registro_exitoso.css" />
         <link rel="stylesheet" href="../css/navbar.css" />
         <link rel="stylesheet" href="../css/styles.css" />
@@ -39,7 +50,7 @@
             <nav class="nav nav-fill collapse navbar-collapse" id="navbarSupportedContent">
                 <a class="nav-item nav-link" href="registro.html">Registro</a>
                 <a class="nav-item nav-link" href="recuperar.html">Recuperar archivo</a>
-                <a class="nav-item nav-link" href="signin.html">Admin</a>
+                <a class="nav-item nav-link" href="sign_in.php">Admin</a>
             </nav>
 
             <a class="navbar-brand logo-ipn" href="#">
@@ -69,8 +80,38 @@
                 <p class="form-mens" id="form-mens">
                     <i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Datos de ingreso inv&aacute;lidos.
                 </p>
+                <p class="form-mens" id="form-mens-no">
+                    <i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Debes iniciar sesion.
+                </p>
             </form>
         </div>
+
+    <?php
+        $error = $_GET["error"];
+        if(isset($error) && strcmp($error, "wrongkeys")==0){
+            
+    ?>
+        
+        <script type = "text/javascript">
+            document.getElementById("form-mens").className += " form-mens-active ";
+        </script>
+
+    <?php
+        }
+    ?>
+
+    <?php
+        if(isset($error) && strcmp($error, "nosession")==0){
+            
+    ?>
+        
+        <script type = "text/javascript">
+            document.getElementById("form-mens-no").className += " form-mens-active ";
+        </script>
+
+    <?php
+        }
+    ?>
 
     </body>
 
