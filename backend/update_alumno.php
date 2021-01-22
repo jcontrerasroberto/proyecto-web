@@ -26,8 +26,8 @@
     
     
 
-    $accion = mysqli_prepare($enlace, "UPDATE alumno SET boleta=?, nombre=?, apellidop=?, apellidom=?, daten=?, sexo=?, curp=?, calle=?, colonia=?, codposta=?, tel=?, correo=?, escuela=?, entidad=?, nombreE=?, promedio=?, escom=? WHERE boleta=? ");
-    mysqli_stmt_bind_param($accion, 'sssssisssisssssdis', 
+    $accion = $enlace->prepare("UPDATE alumno SET boleta=?, nombre=?, apellidop=?, apellidom=?, daten=?, sexo=?, curp=?, calle=?, colonia=?, codpostal=?, tel=?, correo=?, escuela=?, entidad=?, nombreE=?, promedio=?, escom=? WHERE boleta=?");
+    $accion->bind_param('sssssisssisssssdis', 
         $data['boleta'],
         $data['nombre'],
         $data['apellidop'],
@@ -45,10 +45,10 @@
         $data['nombreE'],
         $data['promedio'],
         $n_opcion,
-        $data['boleta']
+        $data['boletaOriginal']
     );
 
-    $result = mysqli_stmt_execute($accion);
+    $result = $accion->execute();
 
     if (!$result){
         $return_arr[] = array("success" => $result);
@@ -58,9 +58,7 @@
 
     
 
-    $return_arr[] = array("success" => $resultados_update , "id" => $data['boleta'], "curp" => $data['curp']);
-
-    mysqli_stmt_close($accion);
+    $return_arr[] = array("success" => $result , "id" => $data['boleta'], "curp" => $data['curp']);
 
     echo json_encode($return_arr);
 

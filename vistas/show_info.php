@@ -349,9 +349,81 @@
           rellena todos los campos del formulario correctamente.
         </p>
         <input type="submit" value="Enviar datos" class="btn btn-primary" />
-        <input onclick="deleteUser(<?php echo $rowUnic['boleta']; ?>)" value="Eliminar registro" class="btn btn-warning" />
+        <input onclick="deleteUser('<?php echo $rowUnic['boleta']; ?>')" value="Eliminar registro" class="btn btn-warning" />
       </div>
     </form>
+  </div>
+
+  <div class="container">
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Confirma tus datos</h4>
+            <button type="button" class="close btn btn-danger" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="form-mens error-bd" id="errorbd">
+              <i class="fas fa-exclamation-triangle"></i> <b>Error:</b> No se
+              pudo guardar tu informacion
+            </p>
+            <p><strong>Boleta:</strong> <span id="mostrar_boleta"></span></p>
+            <p><strong>Nombre:</strong> <span id="mostrar_nombre"></span></p>
+            <p>
+              <strong>Apellido paterno:</strong>
+              <span id="mostrar_apellidop"></span>
+            </p>
+            <p>
+              <strong>Apellido materno:</strong>
+              <span id="mostrar_apellidom"></span>
+            </p>
+            <p>
+              <strong>Fecha de nacimiento:</strong>
+              <span id="mostrar_daten"></span>
+            </p>
+            <p><strong>Sexo:</strong> <span id="mostrar_sexo"></span></p>
+            <p><strong>CURP:</strong> <span id="mostrar_curp"></span></p>
+            <p><strong>Calle:</strong> <span id="mostrar_calle"></span></p>
+            <p>
+              <strong>Colonia:</strong> <span id="mostrar_colonia"></span>
+            </p>
+            <p><strong>CP:</strong> <span id="mostrar_codpostal"></span></p>
+            <p>
+              <strong>Número de telefono:</strong>
+              <span id="mostrar_tel"></span>
+            </p>
+            <p><strong>Correo:</strong> <span id="mostrar_correo"></span></p>
+            <p>
+              <strong>Escuela:</strong> <span id="mostrar_escuela"></span>
+            </p>
+            <p>
+              <strong>Entidad:</strong> <span id="mostrar_entidad"></span>
+            </p>
+            <p id="label_nombreE" style="display: none">
+              <strong>Nombre de la escuela:</strong>
+              <span id="mostrar_nombreE"></span>
+            </p>
+            <p>
+              <strong>Promedio:</strong> <span id="mostrar_promedio"></span>
+            </p>
+            <p>
+              <strong>ESCOM fue tu opcion:</strong>
+              <span id="mostrar_escom"></span>
+            </p>
+            <input type="button" value="Enviar datos" class="btn btn-primary" onclick="guardarDatos('<?php echo $rowUnic['boleta']; ?>')" />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Modificar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -362,7 +434,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
     integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
     crossorigin="anonymous"></script>
-  <script src="../scripts/confirmation.js"></script>
+  <script src="../scripts/admin_crud.js"></script>
   <script src="../scripts/editar_info.js"></script>
 </body>
 
