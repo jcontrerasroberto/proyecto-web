@@ -1,5 +1,12 @@
 <?php
 
+    session_start();
+
+    if (!isset($_SESSION['active']) || !$_SESSION['active']) {
+        header("Location: ../vistas/sign_in.php?error=nosession");
+        die();
+    }
+
     require_once('openconnectiondb.php');
     $data = json_decode( file_get_contents( 'php://input' ), true );
 
