@@ -11,7 +11,7 @@ function addEntry(data) {
     contenedor_entry.setAttribute('class', 'entrada-container');
 
     var a_box = document.createElement('a');
-    a_box.setAttribute('href', '/show_info.php?key=' + data["boleta"] );
+    a_box.setAttribute('href', '/vistas/show_info.php?key=' + data["boleta"] );
     a_box.setAttribute('class', 'list-group-item list-group-item-action resultado-item');
 
     var h3_info = document.createElement('h5');
