@@ -360,7 +360,7 @@
     integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
     crossorigin="anonymous"></script>
   <script src="../scripts/confirmation.js"></script>
-  <script src="../scripts/script.js"></script>
+  <script src="../scripts/editar_info.js"></script>
 </body>
 
 
