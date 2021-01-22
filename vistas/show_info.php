@@ -369,7 +369,7 @@
           <div class="modal-body">
             <p class="form-mens error-bd" id="errorbd">
               <i class="fas fa-exclamation-triangle"></i> <b>Error:</b> No se
-              pudo guardar tu informacion
+              pudo actualziar la informacion
             </p>
             <p><strong>Boleta:</strong> <span id="mostrar_boleta"></span></p>
             <p><strong>Nombre:</strong> <span id="mostrar_nombre"></span></p>

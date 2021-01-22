@@ -74,7 +74,7 @@ function guardarDatos(boletaOriginal) {
         success: function (data) {
             console.log(data);
             if(data[0].success){
-                window.location.href="registro_exitoso.html?id="+data[0].id+"&curp="+data[0].curp;
+                window.location.href="admin.php?action=successupdate";
             }else{
                 document.getElementById("errorbd").style.display="block";
             }
@@ -97,9 +97,10 @@ function deleteUser(boleta) {
         success: function (data) {
             console.log(data);
             if(data[0].success){
+                window.location.href="admin.php?action=successdelete";
                 //window.location.href="registro_exitoso.html?id="+data[0].id+"&curp="+data[0].curp;
             }else{
-                document.getElementById("errorbd").style.display="block";
+                window.location.href="admin.php?action=nosuccessdelete";
             }
         },
         data: jsonformat

@@ -58,6 +58,24 @@ if (!isset($_SESSION['active']) || !$_SESSION['active']) {
         </nav>
     </nav>
 
+    <div class="container messages">
+
+        <?php 
+            $mensaje = $_GET['action']; 
+            if(strcmp($mensaje, "successupdate")==0){
+                echo '<div class="alert alert-success" role="alert"> Registro actualizado exitosamente </div>';
+            }
+            if(strcmp($mensaje, "successdelete")==0){
+                echo '<div class="alert alert-success" role="alert"> Registro eliminado exitosamente </div>';
+            }
+            if(strcmp($mensaje, "nosuccessdelete")==0){
+                echo '<div class="alert alert-danger" role="alert"> No se pudo eliminar el registro </div>';
+            }
+        ?>
+
+        
+    </div>
+
     <div class="container abrazador">
         <div class="container success">
             <h5>Datos registrados</h5>
