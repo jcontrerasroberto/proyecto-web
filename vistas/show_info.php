@@ -349,7 +349,7 @@
           rellena todos los campos del formulario correctamente.
         </p>
         <input type="submit" value="Enviar datos" class="btn btn-primary" />
-        <input onclick="deleteUser('<?php echo $rowUnic['boleta']; ?>')" value="Eliminar registro" class="btn btn-warning" />
+        <input type="button" onclick="deleteUser('<?php echo $rowUnic['boleta']; ?>')" value="Eliminar registro" class="btn btn-warning" />
       </div>
     </form>
   </div>
