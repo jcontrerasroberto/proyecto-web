@@ -16,22 +16,22 @@ const expressions = {
 }
 
 const campos = {
-    boleta: false,
-    nombre: false,
-    apellidop: false,
-    apellidom: false,
-    daten: false,
-    curp: false,
-    calle: false,
-    colonia: false,
-    codpostal: false,
-    tel: false,
-    correo: false,
+    boleta: true,
+    nombre: true,
+    apellidop: true,
+    apellidom: true,
+    daten: true,
+    curp: true,
+    calle: true,
+    colonia: true,
+    codpostal: true,
+    tel: true,
+    correo: true,
     nombreE: true,
-    promedio: false,
-    escuela: false,
-    entidad: false,
-    escom: false
+    promedio: true,
+    escuela: true,
+    entidad: true,
+    escom: true
 }
 
 const validCampo = (expression, input, campo) => {
