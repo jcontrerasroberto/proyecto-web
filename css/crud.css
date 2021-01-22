@@ -1,3 +1,12 @@
 .resultado-item{
     cursor: pointer;
+    width: 100%;
+}
+
+.resultados{
+    width: 100%;
+}
+
+.entrada-container{
+    width: 100%;
 }

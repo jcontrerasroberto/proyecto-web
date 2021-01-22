@@ -1,10 +1,10 @@
 <?php
-    session_start();
+session_start();
 
-    if (!isset($_SESSION['active']) || !$_SESSION['active']) {
-        header("Location: ../vistas/sign_in.php?error=nosession");
-        die();
-    }
+if (!isset($_SESSION['active']) || !$_SESSION['active']) {
+    header("Location: ../vistas/sign_in.php?error=nosession");
+    die();
+}
 
 ?>
 
@@ -24,61 +24,70 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/registro_exitoso.css" />
-    <link rel="stylesheet" href="../css/navbar.css" />
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/crud.css">
-    <script type = "text/javascript" src="../scripts/resultados_crud.js"></script>
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <script type="text/javascript" src="../scripts/resultados_crud.js"></script>
     <title>Registro exitoso</title>
 </head>
 
 <body>
     <!-- Image and text -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: white">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="identidad">
         <a class="navbar-brand logo-escom" href="#">
-            <img src="https://www.escom.ipn.mx/images/logoESCOM2x.png" height="100" class="d-inline-block align-top" alt="" />
+            <img src="https://www.escom.ipn.mx/images/logoESCOM2x.png" height="80" class="d-inline-block align-top" alt="" />
         </a>
+        <a class="navbar-brand logo-ipn" href="#">
+            <img src="https://i.pinimg.com/originals/45/b1/41/45b141e39ebc8f63a7b94fe66b14fd4f.jpg" height="80" class="d-inline-block align-top" alt="" />
+        </a>
+    </div>
+    <br />
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+                <i class="fas fa-bars" style="color: #fff; font-size: 28px"></i>
+            </span>
+        </button>
 
         <nav class="nav nav-fill collapse navbar-collapse" id="navbarSupportedContent">
             <a class="nav-item nav-link" href="registro.html">Registro</a>
             <a class="nav-item nav-link" href="recuperar.html">Recuperar archivo</a>
-            <a class="nav-item nav-link" href="../backend/close_session.php">Cerrar sesión</a>
+            <a class="nav-item nav-link" href="sign_in.php">Admin</a>
+            <a class="nav-item nav-link" href="../backend/close_session.php">Cerrar sesion</a>
         </nav>
-
-        <a class="navbar-brand logo-ipn" href="#">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Logo_Instituto_Polit%C3%A9cnico_Nacional.png/1200px-Logo_Instituto_Polit%C3%A9cnico_Nacional.png" height="150" class="d-inline-block align-top" alt="" />
-        </a>
     </nav>
 
-    <div class="container success">
-        <h1>Datos registrados</h1>
-        <br>
-    </div>
+    <div class="container abrazador">
+        <div class="container success">
+            <h5>Datos registrados</h5>
+            <br>
+        </div>
 
-    <div class="container resultados">
-        <div class="list-group" id="resultados-list">
+        <div class="container resultados">
+            <div class="list-group" id="resultados-list">
+            </div>
         </div>
     </div>
+    
 
 </body>
 
 <?php
-    require_once('../backend/get_entries.php');
+require_once('../backend/get_entries.php');
 
-    if ($resultado) {
-        // Cycle through results
-        while ($row = mysqli_fetch_array($resultado)) {
+if ($resultado) {
+    // Cycle through results
+    while ($row = mysqli_fetch_array($resultado)) {
 ?>
-            <script type="text/javascript">
-                addEntry(<?php echo json_encode($row); ?>);
-            </script>
+        <script type="text/javascript">
+            addEntry(<?php echo json_encode($row); ?>);
+        </script>
 <?php
-        }
-        // Free result set
-        $resultado->close();
     }
+    // Free result set
+    $resultado->close();
+}
 
 ?>
 

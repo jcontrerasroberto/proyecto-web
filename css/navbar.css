@@ -7,19 +7,59 @@
     text-align: center;
     border-bottom: 2px solid grey;
     margin-bottom: 30px;
+    background-color: black;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-toggler{
+    margin: 15px;
+    color: white;
+}
+
+.navbar-toggler-icon{
+    color: white;
 }
 
 .nav-item {
-    font-size: 25px;
+    padding-top: 30px;
+    font-size: 18px;
     font-family: 'Fjalla One', sans-serif;
-    color: #D61E7A;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.nav-item:hover {
+    color: #1ABC9C;
+}
+
+.identidad {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.logo-escom{
+    margin-left: 30px;
 }
 
 @media (max-width: 520px) {
-    .logo-ipn {
-        display: none;
+    .identidad {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
     }
-    .logo-escom {
-        width: 70px;
+
+    .nav-item {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        margin-top: 7px;
+        margin-bottom: 15px;
     }
 }
