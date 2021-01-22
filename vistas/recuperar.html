@@ -50,6 +50,16 @@
         </nav>
 
         <div class="container success">
+            <h4 style="display:none" id="error">Error: Credenciales incorrectas</h4>
+
+            <script type="text/javascript">
+                const queryString = window.location.search;
+                const urlParams = new URLSearchParams(queryString);
+                const error = urlParams.get('error');
+                if (error==="wrongkeys")
+                    document.getElementById("error").style.display = "block";
+            </script>
+            <br>
             <h3>¡Ingresa tus datos para obtener tu archivo comprobante!</h3>
             <form action="../backend/descargarpdf.php" method="POST">
                 <div class="form-group" id="group-boleta">

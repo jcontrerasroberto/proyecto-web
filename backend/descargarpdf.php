@@ -1,11 +1,25 @@
 <?php
     require_once("openconnectiondb.php");
     include("./fpdf182/fpdf.php");
+    use PHPMailer\PHPMailer\PHPMailer;
+	use PHPMailer\PHPMailer\Exception;
+
+	require 'PHPMailer/Exception.php';
+	require 'PHPMailer/PHPMailer.php';
+	require 'PHPMailer/SMTP.php';
+
     $boleta = $_POST["boleta"];
     $curp = $_POST["curp"];
     mysqli_set_charset($enlace,"utf8");
     $consulta = "SELECT * FROM alumno WHERE boleta='$boleta' AND curp='$curp'";
     $respuesta = $enlace->query($consulta);
+
+    if($respuesta->num_rows === 0)
+    {
+        header("Location: ../vistas/recuperar.html?error=wrongkeys");
+        die();
+    }
+
     $row = $respuesta->fetch_assoc();
     $horario = $row['horario_id'];
     $consulta2 = "SELECT * FROM horarios WHERE horario_id='$horario'";
@@ -121,5 +135,49 @@
     }
     
     require_once("closeconnectiondb.php");
+
     $pdf->Output();
+    $pdfdoc = $pdf->Output("", "S");
+    $from = "";	
+	$subject  = "Comprobante examen ESCOM";
+	$message = "Te enviamos tu comprobante, exito en tu examen";
+
+	$mail = new PHPMailer(true);
+
+	try {
+        //Server settings
+        $mail->SMTPOptions = array(
+            'ssl' => array(
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true
+            )
+        );
+
+	    $mail->SMTPDebug = 2;                                       // Enable verbose debug output
+	    $mail->isSMTP();                                            // Set mailer to use SMTP
+	    $mail->Host       = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+	    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+	    $mail->Username   = '';                     // SMTP username
+	    $mail->Password   = '';                               // SMTP password
+	    $mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
+	    $mail->Port       = 587;                                    // TCP port to connect to
+
+	    //Recipients
+	    $mail->setFrom('', 'ESCOM');
+	    $mail->addAddress($row['correo']);     // Add a recipient
+
+
+	    // Content
+	    $mail->isHTML(true);                                  // Set email format to HTML
+	    $mail->Subject = $subject;
+        $mail->Body    = $message;
+        $mail->addStringAttachment($pdfdoc, 'comprobante.pdf', 'base64', 'application/pdf');
+	    
+	    $mail->send();
+	    echo 'Message has been sent';
+	} catch (Exception $e) {
+	    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
+
 ?>
