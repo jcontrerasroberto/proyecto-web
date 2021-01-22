@@ -308,7 +308,7 @@
               </select>
             </div>
 
-            <div class="form-group nombreE" id="group-nombreE">
+            <div class="form-group nombreE <?php if($rowUnic["escuela"]=="otro") echo "nombreE-active" ?>" id="group-nombreE">
               <label for="nombreE">Nombre de la escuela </label>
               <div class="form-group-input">
                 <input type="text" name="nombreE" id="nombreE" class="form-control" value="<?php echo $rowUnic["nombreE"]?>"/>
@@ -363,7 +363,7 @@
     integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
     crossorigin="anonymous"></script>
   <script src="../scripts/confirmation.js"></script>
-  <script src="../scripts/script.js"></script>
+  <script src="../scripts/editar_info.js"></script>
 </body>
 
 
