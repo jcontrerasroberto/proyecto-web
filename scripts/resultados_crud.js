@@ -26,3 +26,17 @@ function addEntry(data) {
     contenedor_entry.appendChild(a_box);
     contenedor.appendChild(contenedor_entry);
 }
+
+const form = document.getElementById('search-form');
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    var porBuscar = document.getElementById('searchText').value;
+    console.log(porBuscar);
+    var hijos = document.getElementById('resultados-list').childNodes;
+
+    for(i=0; i<hijos.length; i++){
+        if(hijos[i].id != porBuscar)
+            hijos[i].style.display = "none";
+    } 
+});
