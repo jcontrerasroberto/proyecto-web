@@ -84,17 +84,18 @@ if (!isset($_SESSION['active']) || !$_SESSION['active']) {
         <div class="container searchSection">
             <form class="search-form row g-3" id="search-form">
                 <div class="input-group mb-3">
-                    <input type="search" class="searchText form-control" name="searchText" id="searchText" placeholder="Buscar" pattern="^P{2}\d{8}$|^P{1}E{1}\d{8}$|^\d{10}$" required>
+                    <input type="search" class="searchText form-control" name="searchText" id="searchText" placeholder="Buscar por boleta" pattern="^P{2}\d{8}$|^P{1}E{1}\d{8}$|^\d{10}$|^$" required>
                     <button type="button" onclick="buscar()" class="submit btn btn-outline-secondary"><i class="fas fa-search"></i> </button>
+                    
                 </div>
-                <div class="col-auto">
-
-                </div>
+                <div class="form-text">Ingresa 10 d&iacute;gitos o PE/PM seguido de 8 d&iacute;gitos.</div><br><br>
             </form>
-            <div class="error-msg" id="error-msg">
-                <p>No se encontraron resultados.</p>
-            </div>
         </div>
+
+        <p class="form-mens" id="form-mens">
+          No se encontraron resultados.
+        </p>
+
         <div class="container resultados">
             <div class="list-group" id="resultados-list">
             </div>
