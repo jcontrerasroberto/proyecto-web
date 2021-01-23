@@ -1,11 +1,8 @@
 function addEntry(data) {
-    console.log(data);
-    console.log(data["boleta"]);
     var text = data["apellidop"] + " " + data["apellidom"] + " " + data["nombre"] + " - " + data["boleta"];
     var curp = data["curp"];
 
     var contenedor = document.getElementById("resultados-list");
-    console.log(contenedor);
 
     var contenedor_entry = document.createElement('div');
     contenedor_entry.setAttribute('class', 'entrada-container');
@@ -28,14 +25,25 @@ function addEntry(data) {
     contenedor.appendChild(contenedor_entry);
 }
 
-const form = document.getElementById('search-form');
 function buscar(){
     var porBuscar = document.getElementById('searchText').value;
-    console.log(porBuscar);
     var hijos = document.getElementById('resultados-list').childNodes;
+    var hay_resultado = 0;
 
-    for(i=0; i<hijos.length; i++){
-        if(hijos[i].id != porBuscar)
+    for(i=1; i<hijos.length; i++){
+        if(hijos[i].id != porBuscar){
             hijos[i].style.display = "none";
-    } 
-});
+        }
+        else{
+            hijos[i].style.display = "block";
+            hay_resultado++;
+        }
+        if(!porBuscar){ //si la barra de búsqueda está vacía, motrará de nuevo todos los resultados.
+            hijos[i].style.display = "block";
+            hay_resultado++;
+        }
+    }
+    if(hay_resultado){
+        document.getElementById('form-mens').classList.remove('form-mens-active');
+    }else{document.getElementById('form-mens').classList.add('form-mens-active');}
+}
