@@ -9,6 +9,7 @@ function addEntry(data) {
 
     var contenedor_entry = document.createElement('div');
     contenedor_entry.setAttribute('class', 'entrada-container');
+    contenedor_entry.setAttribute('id', data["boleta"]);
 
     var a_box = document.createElement('a');
     a_box.setAttribute('href', '/vistas/show_info.php?key=' + data["boleta"] );
@@ -28,9 +29,7 @@ function addEntry(data) {
 }
 
 const form = document.getElementById('search-form');
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
+function buscar(){
     var porBuscar = document.getElementById('searchText').value;
     console.log(porBuscar);
     var hijos = document.getElementById('resultados-list').childNodes;
