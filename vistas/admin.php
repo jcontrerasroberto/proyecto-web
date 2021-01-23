@@ -85,7 +85,7 @@ if (!isset($_SESSION['active']) || !$_SESSION['active']) {
             <form class="search-form row g-3" id="search-form">
                 <div class="input-group mb-3">
                     <input type="search" class="searchText form-control" name="searchText" id="searchText" placeholder="Buscar" pattern="^P{2}\d{8}$|^P{1}E{1}\d{8}$|^\d{10}$" required>
-                    <button type="submit" class="submit btn btn-outline-secondary"><i class="fas fa-search"></i> </button>
+                    <button type="button" onclick="buscar()" class="submit btn btn-outline-secondary"><i class="fas fa-search"></i> </button>
                 </div>
                 <div class="col-auto">
 
